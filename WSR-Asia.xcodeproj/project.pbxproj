@@ -52,12 +52,19 @@
 		06CA08D3AD64C24B42057E47 /* Pods_WSR_Asia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */; };
 		F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382026B914AD003359EE /* AppDelegate.swift */; };
 		F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382226B914AD003359EE /* SceneDelegate.swift */; };
-		F5D6382526B914AD003359EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382426B914AD003359EE /* ViewController.swift */; };
+		F5D6382526B914AD003359EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382426B914AD003359EE /* LoginViewController.swift */; };
 		F5D6382826B914AD003359EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D6382626B914AD003359EE /* Main.storyboard */; };
 		F5D6382A26B914AF003359EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D6382926B914AF003359EE /* Assets.xcassets */; };
 		F5D6382D26B914AF003359EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D6382B26B914AF003359EE /* LaunchScreen.storyboard */; };
 		F5D6383626B928B0003359EE /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383526B928B0003359EE /* ValidationHelper.swift */; };
 		F5D6383826B92A1F003359EE /* UITextFieldExxtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383726B92A1F003359EE /* UITextFieldExxtension.swift */; };
+		F5D6383B26B92FD4003359EE /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383A26B92FD3003359EE /* SignIn.swift */; };
+		F5D6383D26B9304B003359EE /* DataManagerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383C26B9304B003359EE /* DataManagerr.swift */; };
+		F5D6383F26B93401003359EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383E26B93401003359EE /* Coordinator.swift */; };
+		F5D6384226B93555003359EE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384126B93555003359EE /* SplashViewController.swift */; };
+		F5D6384426B9355E003359EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384326B9355E003359EE /* HomeViewController.swift */; };
+		F5D6384626B9384D003359EE /* Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384526B9384D003359EE /* Cases.swift */; };
+		F5D6384826B93879003359EE /* SymptomsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384726B93879003359EE /* SymptomsHistory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,13 +116,20 @@
 		F5D6381D26B914AD003359EE /* WSR-Asia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSR-Asia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D6382026B914AD003359EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D6382226B914AD003359EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F5D6382426B914AD003359EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F5D6382426B914AD003359EE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F5D6382726B914AD003359EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F5D6382926B914AF003359EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5D6382C26B914AF003359EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5D6382E26B914AF003359EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5D6383526B928B0003359EE /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
 		F5D6383726B92A1F003359EE /* UITextFieldExxtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExxtension.swift; sourceTree = "<group>"; };
+		F5D6383A26B92FD3003359EE /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		F5D6383C26B9304B003359EE /* DataManagerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerr.swift; sourceTree = "<group>"; };
+		F5D6383E26B93401003359EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		F5D6384126B93555003359EE /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F5D6384326B9355E003359EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5D6384526B9384D003359EE /* Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cases.swift; sourceTree = "<group>"; };
+		F5D6384726B93879003359EE /* SymptomsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsHistory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,11 +239,12 @@
 		F5D6381F26B914AD003359EE /* WSR-Asia */ = {
 			isa = PBXGroup;
 			children = (
+				F5D6383926B92FC6003359EE /* Models */,
 				05A968AC26B91E5F00DC509C /* Recources */,
 				F5D6383426B9289D003359EE /* Helpers */,
 				F5D6382026B914AD003359EE /* AppDelegate.swift */,
 				F5D6382226B914AD003359EE /* SceneDelegate.swift */,
-				F5D6382426B914AD003359EE /* ViewController.swift */,
+				F5D6384026B93539003359EE /* View Controllers */,
 				F5D6382626B914AD003359EE /* Main.storyboard */,
 				F5D6382926B914AF003359EE /* Assets.xcassets */,
 				F5D6382B26B914AF003359EE /* LaunchScreen.storyboard */,
@@ -243,8 +258,30 @@
 			children = (
 				F5D6383526B928B0003359EE /* ValidationHelper.swift */,
 				F5D6383726B92A1F003359EE /* UITextFieldExxtension.swift */,
+				F5D6383C26B9304B003359EE /* DataManagerr.swift */,
+				F5D6383E26B93401003359EE /* Coordinator.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F5D6383926B92FC6003359EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5D6383A26B92FD3003359EE /* SignIn.swift */,
+				F5D6384526B9384D003359EE /* Cases.swift */,
+				F5D6384726B93879003359EE /* SymptomsHistory.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5D6384026B93539003359EE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5D6382426B914AD003359EE /* LoginViewController.swift */,
+				F5D6384126B93555003359EE /* SplashViewController.swift */,
+				F5D6384326B9355E003359EE /* HomeViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -403,8 +440,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D6383F26B93401003359EE /* Coordinator.swift in Sources */,
 				F5D6383626B928B0003359EE /* ValidationHelper.swift in Sources */,
-				F5D6382526B914AD003359EE /* ViewController.swift in Sources */,
+				F5D6384626B9384D003359EE /* Cases.swift in Sources */,
+				F5D6383D26B9304B003359EE /* DataManagerr.swift in Sources */,
+				F5D6384226B93555003359EE /* SplashViewController.swift in Sources */,
+				F5D6383B26B92FD4003359EE /* SignIn.swift in Sources */,
+				F5D6384826B93879003359EE /* SymptomsHistory.swift in Sources */,
+				F5D6384426B9355E003359EE /* HomeViewController.swift in Sources */,
+				F5D6382526B914AD003359EE /* LoginViewController.swift in Sources */,
 				F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */,
 				F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */,
 				F5D6383826B92A1F003359EE /* UITextFieldExxtension.swift in Sources */,
