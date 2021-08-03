@@ -10,6 +10,7 @@ import Alamofire
 
 class HomeViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var noReportView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet var alertView: UIView!
     @IBOutlet weak var uncheckedView: UIView!
@@ -19,7 +20,8 @@ class HomeViewController: UIViewController, Storyboarded {
     @IBOutlet weak var casesView: UIView!
     @IBOutlet weak var currentDateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
-    
+    @IBOutlet weak var reportView: UIView!
+
     var syptomData: [SymptomsHistoryData]!
     
     override func viewDidLoad() {
@@ -30,6 +32,7 @@ class HomeViewController: UIViewController, Storyboarded {
     
     func setupUI() {
         casesView.layer.cornerRadius = 20
+        noReportView.layer.cornerRadius = 20
         setupCasesView(cases: 0)
         checkButton.underline()
         setupHasCheckedView(hasChecked: false)
@@ -119,10 +122,12 @@ class HomeViewController: UIViewController, Storyboarded {
             checkView.isHidden = false
             uncheckedView.isHidden = true
             checkButton.setTitle("Re-check in", for: .normal)
+            noReportView.isHidden = true
         } else {
             checkView.isHidden = true
             uncheckedView.isHidden = false
             checkButton.setTitle("Why do this?", for: .normal)
+            noReportView.isHidden = false
         }
     }
     

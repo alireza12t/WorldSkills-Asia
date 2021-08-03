@@ -386,6 +386,69 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="qNI-D0-S75">
+                                <rect key="frame" x="19" y="245" width="376" height="60"/>
+                                <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0AT-UM-K6I">
+                                        <rect key="frame" x="-70" y="0.0" width="70" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9Cj-9d-nQq">
+                                                <rect key="frame" x="25" y="15.5" width="30" height="29"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="EV4-Xk-UQM"/>
+                                                    <constraint firstAttribute="height" constant="30" id="ld6-jO-g77"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="You haven’t report today’s health status." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzq-zo-j67">
+                                                <rect key="frame" x="20" y="5" width="0.0" height="50"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Extrabld" family="Proxima Nova" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="brandRed"/>
+                                        <constraints>
+                                            <constraint firstItem="tzq-zo-j67" firstAttribute="top" secondItem="0AT-UM-K6I" secondAttribute="top" constant="5" id="10h-PZ-T9E"/>
+                                            <constraint firstItem="9Cj-9d-nQq" firstAttribute="leading" secondItem="tzq-zo-j67" secondAttribute="trailing" constant="5" id="RPg-nl-6jv"/>
+                                            <constraint firstAttribute="bottom" secondItem="tzq-zo-j67" secondAttribute="bottom" constant="5" id="S4S-YR-HAk"/>
+                                            <constraint firstItem="tzq-zo-j67" firstAttribute="leading" secondItem="0AT-UM-K6I" secondAttribute="leading" constant="20" id="ZT8-Qq-hTX"/>
+                                            <constraint firstAttribute="trailing" secondItem="9Cj-9d-nQq" secondAttribute="trailing" constant="15" id="f8H-hw-IuM"/>
+                                            <constraint firstItem="9Cj-9d-nQq" firstAttribute="centerY" secondItem="tzq-zo-j67" secondAttribute="centerY" id="qoB-15-np3"/>
+                                            <constraint firstAttribute="height" constant="60" id="vFA-tG-cwE"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSI-hb-XJy">
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="60"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="info.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="61D-zV-Fcq">
+                                                <rect key="frame" x="331" y="15.5" width="30" height="29"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="e6E-uN-mbb"/>
+                                                    <constraint firstAttribute="height" constant="30" id="ocF-Gg-ch2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="You haven’t report today’s health status." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJd-Ab-YpF">
+                                                <rect key="frame" x="20" y="5" width="306" height="50"/>
+                                                <fontDescription key="fontDescription" name="ProximaNova-Extrabld" family="Proxima Nova" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="darkBrandBlue"/>
+                                        <constraints>
+                                            <constraint firstItem="61D-zV-Fcq" firstAttribute="leading" secondItem="RJd-Ab-YpF" secondAttribute="trailing" constant="5" id="40S-dS-10O"/>
+                                            <constraint firstAttribute="bottom" secondItem="RJd-Ab-YpF" secondAttribute="bottom" constant="5" id="8TL-Rh-DPg"/>
+                                            <constraint firstItem="RJd-Ab-YpF" firstAttribute="leading" secondItem="ZSI-hb-XJy" secondAttribute="leading" constant="20" id="8YM-XL-fe6"/>
+                                            <constraint firstItem="RJd-Ab-YpF" firstAttribute="top" secondItem="ZSI-hb-XJy" secondAttribute="top" constant="5" id="MOc-ed-7Tk"/>
+                                            <constraint firstItem="61D-zV-Fcq" firstAttribute="centerY" secondItem="RJd-Ab-YpF" secondAttribute="centerY" id="bNl-rA-pfN"/>
+                                            <constraint firstAttribute="height" constant="200" id="mTs-2r-39r"/>
+                                            <constraint firstAttribute="trailing" secondItem="61D-zV-Fcq" secondAttribute="trailing" constant="15" id="vDR-oS-lY5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="puB-V8-zpq"/>
                         <color key="backgroundColor" name="brandBlue"/>
@@ -395,10 +458,13 @@
                             <constraint firstItem="AyM-i1-8j7" firstAttribute="centerY" secondItem="B3T-oy-3hb" secondAttribute="centerY" id="84r-ED-4Vn"/>
                             <constraint firstItem="B3T-oy-3hb" firstAttribute="centerX" secondItem="puB-V8-zpq" secondAttribute="centerX" id="JgA-XH-PqL"/>
                             <constraint firstItem="puB-V8-zpq" firstAttribute="bottom" secondItem="EtS-B8-Hen" secondAttribute="bottom" constant="25" id="Mcr-iN-sZc"/>
+                            <constraint firstItem="puB-V8-zpq" firstAttribute="trailing" secondItem="qNI-D0-S75" secondAttribute="trailing" constant="19" id="NOK-XZ-oLY"/>
+                            <constraint firstItem="qNI-D0-S75" firstAttribute="leading" secondItem="xkg-N5-uzG" secondAttribute="leading" constant="19" id="NjR-kg-4FC"/>
                             <constraint firstItem="EsD-qB-n9b" firstAttribute="centerX" secondItem="B3T-oy-3hb" secondAttribute="centerX" id="O6Y-vG-c6e"/>
                             <constraint firstItem="IQ7-uz-yhP" firstAttribute="leading" secondItem="puB-V8-zpq" secondAttribute="leading" constant="18" id="OFI-5x-RCb"/>
                             <constraint firstItem="UN0-Vh-dYh" firstAttribute="leading" secondItem="puB-V8-zpq" secondAttribute="leading" id="SZT-cf-vRa"/>
                             <constraint firstItem="puB-V8-zpq" firstAttribute="trailing" secondItem="IQ7-uz-yhP" secondAttribute="trailing" constant="18" id="UDG-Zy-LMS"/>
+                            <constraint firstItem="qNI-D0-S75" firstAttribute="top" secondItem="IQ7-uz-yhP" secondAttribute="bottom" constant="12" id="UXa-eD-0kH"/>
                             <constraint firstItem="B3T-oy-3hb" firstAttribute="top" secondItem="puB-V8-zpq" secondAttribute="top" constant="20" id="UqB-Pa-cjm"/>
                             <constraint firstItem="puB-V8-zpq" firstAttribute="trailing" secondItem="AyM-i1-8j7" secondAttribute="trailing" constant="46" id="VGj-ly-OTT"/>
                             <constraint firstItem="UN0-Vh-dYh" firstAttribute="trailing" secondItem="puB-V8-zpq" secondAttribute="trailing" id="VQ7-UF-Qtd"/>
@@ -416,6 +482,7 @@
                         <outlet property="currentDateLabel" destination="EsD-qB-n9b" id="noW-Yc-Eov"/>
                         <outlet property="errorLabel" destination="oOM-OT-Ya6" id="RwJ-Kw-tyq"/>
                         <outlet property="nameLabel" destination="qj0-wc-MUQ" id="am3-3U-WCI"/>
+                        <outlet property="noReportView" destination="0AT-UM-K6I" id="Bw3-fw-uSq"/>
                         <outlet property="uncheckedView" destination="ETG-uV-6gS" id="MuK-Vc-jzc"/>
                     </connections>
                 </viewController>
