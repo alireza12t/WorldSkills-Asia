@@ -274,7 +274,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="in campus in the last 14 days" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5B-Nu-g5w">
-                                        <rect key="frame" x="90.5" y="5" width="267.5" height="50"/>
+                                        <rect key="frame" x="88.5" y="5" width="269.5" height="50"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -287,7 +287,7 @@
                                     <constraint firstItem="KWr-Pv-Bh4" firstAttribute="top" secondItem="IQ7-uz-yhP" secondAttribute="top" constant="5" id="P16-uD-kGL"/>
                                     <constraint firstItem="I5B-Nu-g5w" firstAttribute="top" secondItem="IQ7-uz-yhP" secondAttribute="top" constant="5" id="YcT-lZ-KG4"/>
                                     <constraint firstAttribute="bottom" secondItem="I5B-Nu-g5w" secondAttribute="bottom" constant="5" id="cLs-ec-WeD"/>
-                                    <constraint firstItem="I5B-Nu-g5w" firstAttribute="leading" secondItem="KWr-Pv-Bh4" secondAttribute="trailing" constant="5" id="m8R-xJ-KcD"/>
+                                    <constraint firstItem="I5B-Nu-g5w" firstAttribute="leading" secondItem="KWr-Pv-Bh4" secondAttribute="trailing" constant="3" id="m8R-xJ-KcD"/>
                                     <constraint firstAttribute="bottom" secondItem="KWr-Pv-Bh4" secondAttribute="bottom" constant="5" id="t9u-Nr-dCa"/>
                                     <constraint firstAttribute="height" constant="60" id="x0q-Ap-7WD"/>
                                 </constraints>
