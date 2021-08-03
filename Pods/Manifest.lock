@@ -1,0 +1,44 @@
+PODS:
+  - Alamofire (5.4.3)
+  - Kingfisher (6.3.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
+  - SPPermissions (6.6.1):
+    - SPPermissions/Core (= 6.6.1)
+  - SPPermissions/Core (6.6.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.4)
+  - Kingfisher
+  - RxKeyboard
+  - SPPermissions
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+    - RxCocoa
+    - RxKeyboard
+    - RxRelay
+    - RxSwift
+    - SPPermissions
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  Kingfisher: 6c3df386db71d82c0817a429d2c9421a77396529
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxKeyboard: 4f5863f43b4ff0cbb2a20b94688d6b80c8a43c14
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
+  SPPermissions: ea8a2fe9276af6d18174e45ba347f3c9cec4b3a5
+
+PODFILE CHECKSUM: 5b0d610f00a74670c42d068876e659ee66cd5deb
+
+COCOAPODS: 1.10.1
