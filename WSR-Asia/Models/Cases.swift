@@ -8,6 +8,7 @@
 import Foundation
 
 struct Cases: Codable {
-    var data: Int
+    var data: Int?
     var success: Bool
+    var error, message, title: String?
 }

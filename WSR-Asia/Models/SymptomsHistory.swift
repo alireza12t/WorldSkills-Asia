@@ -8,8 +8,9 @@
 import Foundation
 
 struct SymptomsHistory: Codable {
-    var data: [SymptomsHistoryData]
+    var data: [SymptomsHistoryData]?
     var success: Bool
+    var error, message, title: String?
 }
 
 struct SymptomsHistoryData: Codable {

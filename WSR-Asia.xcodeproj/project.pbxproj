@@ -65,6 +65,9 @@
 		F5D6384426B9355E003359EE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384326B9355E003359EE /* HomeViewController.swift */; };
 		F5D6384626B9384D003359EE /* Cases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384526B9384D003359EE /* Cases.swift */; };
 		F5D6384826B93879003359EE /* SymptomsHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384726B93879003359EE /* SymptomsHistory.swift */; };
+		F5D6384A26B93BF7003359EE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384926B93BF7003359EE /* DateExtension.swift */; };
+		F5D6384C26B940AF003359EE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384B26B940AF003359EE /* UIColorExtension.swift */; };
+		F5D6384E26B9434C003359EE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384D26B9434C003359EE /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,9 @@
 		F5D6384326B9355E003359EE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F5D6384526B9384D003359EE /* Cases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cases.swift; sourceTree = "<group>"; };
 		F5D6384726B93879003359EE /* SymptomsHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsHistory.swift; sourceTree = "<group>"; };
+		F5D6384926B93BF7003359EE /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		F5D6384B26B940AF003359EE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		F5D6384D26B9434C003359EE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,9 @@
 				F5D6383726B92A1F003359EE /* UITextFieldExxtension.swift */,
 				F5D6383C26B9304B003359EE /* DataManagerr.swift */,
 				F5D6383E26B93401003359EE /* Coordinator.swift */,
+				F5D6384926B93BF7003359EE /* DateExtension.swift */,
+				F5D6384B26B940AF003359EE /* UIColorExtension.swift */,
+				F5D6384D26B9434C003359EE /* UIButtonExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -441,14 +450,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D6383F26B93401003359EE /* Coordinator.swift in Sources */,
+				F5D6384C26B940AF003359EE /* UIColorExtension.swift in Sources */,
 				F5D6383626B928B0003359EE /* ValidationHelper.swift in Sources */,
 				F5D6384626B9384D003359EE /* Cases.swift in Sources */,
 				F5D6383D26B9304B003359EE /* DataManagerr.swift in Sources */,
 				F5D6384226B93555003359EE /* SplashViewController.swift in Sources */,
+				F5D6384A26B93BF7003359EE /* DateExtension.swift in Sources */,
 				F5D6383B26B92FD4003359EE /* SignIn.swift in Sources */,
 				F5D6384826B93879003359EE /* SymptomsHistory.swift in Sources */,
 				F5D6384426B9355E003359EE /* HomeViewController.swift in Sources */,
 				F5D6382526B914AD003359EE /* LoginViewController.swift in Sources */,
+				F5D6384E26B9434C003359EE /* UIButtonExtension.swift in Sources */,
 				F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */,
 				F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */,
 				F5D6383826B92A1F003359EE /* UITextFieldExxtension.swift in Sources */,
