@@ -42,7 +42,7 @@ class HomeViewController: UIViewController, Storyboarded {
         currentDateLabel.text = Date().toText(with: "MMM dd, yyyy")
         nameLabel.text = DataManager.shared.name
         if currentReachabilityStatus == .reachable {
-            getCases(isZero: true)
+            getCases()
             getSymptomsHistory()
         } else {
             showAlertView("No InterNet Connection")
