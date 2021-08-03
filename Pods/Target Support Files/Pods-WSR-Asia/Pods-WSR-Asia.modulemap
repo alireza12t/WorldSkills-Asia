@@ -1,0 +1,6 @@
+framework module Pods_WSR_Asia {
+  umbrella header "Pods-WSR-Asia-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -49,12 +49,15 @@
 		05A968FF26B91E8100DC509C /* ProximaNovaExCn-BoldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A968D526B91E8100DC509C /* ProximaNovaExCn-BoldIt.ttf */; };
 		05A9690026B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A968D626B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf */; };
 		05A9690126B91E8100DC509C /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A968D726B91E8100DC509C /* ProximaNova-Bold.ttf */; };
+		06CA08D3AD64C24B42057E47 /* Pods_WSR_Asia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */; };
 		F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382026B914AD003359EE /* AppDelegate.swift */; };
 		F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382226B914AD003359EE /* SceneDelegate.swift */; };
 		F5D6382526B914AD003359EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382426B914AD003359EE /* ViewController.swift */; };
 		F5D6382826B914AD003359EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D6382626B914AD003359EE /* Main.storyboard */; };
 		F5D6382A26B914AF003359EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5D6382926B914AF003359EE /* Assets.xcassets */; };
 		F5D6382D26B914AF003359EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5D6382B26B914AF003359EE /* LaunchScreen.storyboard */; };
+		F5D6383626B928B0003359EE /* ValidationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383526B928B0003359EE /* ValidationHelper.swift */; };
+		F5D6383826B92A1F003359EE /* UITextFieldExxtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383726B92A1F003359EE /* UITextFieldExxtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,9 @@
 		05A968D526B91E8100DC509C /* ProximaNovaExCn-BoldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaExCn-BoldIt.ttf"; sourceTree = "<group>"; };
 		05A968D626B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaCond-RegularIt.ttf"; sourceTree = "<group>"; };
 		05A968D726B91E8100DC509C /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		97F2DAFB17640F3DCCC4F1EF /* Pods-WSR-Asia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSR-Asia.release.xcconfig"; path = "Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia.release.xcconfig"; sourceTree = "<group>"; };
+		ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSR-Asia.debug.xcconfig"; path = "Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia.debug.xcconfig"; sourceTree = "<group>"; };
+		F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSR_Asia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D6381D26B914AD003359EE /* WSR-Asia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSR-Asia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D6382026B914AD003359EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D6382226B914AD003359EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 		F5D6382926B914AF003359EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5D6382C26B914AF003359EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5D6382E26B914AF003359EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5D6383526B928B0003359EE /* ValidationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationHelper.swift; sourceTree = "<group>"; };
+		F5D6383726B92A1F003359EE /* UITextFieldExxtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExxtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +123,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06CA08D3AD64C24B42057E47 /* Pods_WSR_Asia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,11 +187,30 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BE513D0D3299F8B96FC664F2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */,
+				97F2DAFB17640F3DCCC4F1EF /* Pods-WSR-Asia.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F27316D7D51EA67B6AD73CAC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F5D6381426B914AC003359EE = {
 			isa = PBXGroup;
 			children = (
 				F5D6381F26B914AD003359EE /* WSR-Asia */,
 				F5D6381E26B914AD003359EE /* Products */,
+				BE513D0D3299F8B96FC664F2 /* Pods */,
+				F27316D7D51EA67B6AD73CAC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -198,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				05A968AC26B91E5F00DC509C /* Recources */,
+				F5D6383426B9289D003359EE /* Helpers */,
 				F5D6382026B914AD003359EE /* AppDelegate.swift */,
 				F5D6382226B914AD003359EE /* SceneDelegate.swift */,
 				F5D6382426B914AD003359EE /* ViewController.swift */,
@@ -209,6 +238,15 @@
 			path = "WSR-Asia";
 			sourceTree = "<group>";
 		};
+		F5D6383426B9289D003359EE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F5D6383526B928B0003359EE /* ValidationHelper.swift */,
+				F5D6383726B92A1F003359EE /* UITextFieldExxtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -216,9 +254,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5D6383126B914AF003359EE /* Build configuration list for PBXNativeTarget "WSR-Asia" */;
 			buildPhases = (
+				6CC26052C5E9E3A490C2B176 /* [CP] Check Pods Manifest.lock */,
 				F5D6381926B914AD003359EE /* Sources */,
 				F5D6381A26B914AD003359EE /* Frameworks */,
 				F5D6381B26B914AD003359EE /* Resources */,
+				485DDD8999EEA05B0F2F43D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -316,14 +356,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		485DDD8999EEA05B0F2F43D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CC26052C5E9E3A490C2B176 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WSR-Asia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F5D6381926B914AD003359EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D6383626B928B0003359EE /* ValidationHelper.swift in Sources */,
 				F5D6382526B914AD003359EE /* ViewController.swift in Sources */,
 				F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */,
 				F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */,
+				F5D6383826B92A1F003359EE /* UITextFieldExxtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +551,7 @@
 		};
 		F5D6383226B914AF003359EE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -487,6 +572,7 @@
 		};
 		F5D6383326B914AF003359EE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97F2DAFB17640F3DCCC4F1EF /* Pods-WSR-Asia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
