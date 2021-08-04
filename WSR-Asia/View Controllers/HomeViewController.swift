@@ -10,6 +10,7 @@ import Alamofire
 
 class HomeViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var noReportContainerView: UIView!
     @IBOutlet weak var noReportView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet var alertView: UIView!
@@ -21,7 +22,19 @@ class HomeViewController: UIViewController, Storyboarded {
     @IBOutlet weak var currentDateLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var reportView: UIView!
-
+    @IBOutlet weak var checkInButton: UIButton!
+    @IBOutlet weak var repportTopView: UIView!
+    @IBOutlet weak var reportStatusLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var reportNameLabel: UILabel!
+    @IBOutlet weak var reportDateLabel: UILabel!
+    @IBOutlet weak var reportTimeLabel: UILabel!
+    @IBOutlet weak var reportBottomView: UIView!
+    
+    @IBAction func shareButtonDidTap(_ sender: Any) {
+        doShareAction()
+    }
+    
     var syptomData: [SymptomsHistoryData]!
     
     override func viewDidLoad() {
@@ -33,12 +46,15 @@ class HomeViewController: UIViewController, Storyboarded {
     func setupUI() {
         casesView.layer.cornerRadius = 20
         noReportView.layer.cornerRadius = 20
+        reportView.layer.cornerRadius = 20
+        checkInButton.layer.cornerRadius = 20
         setupCasesView(cases: 0)
         checkButton.underline()
-        setupHasCheckedView(hasChecked: false)
+        setupHasCheckedView(nil)
     }
     
     func fillUI() {
+        reportNameLabel.text = DataManager.shared.name
         currentDateLabel.text = Date().toText(with: "MMM dd, yyyy")
         nameLabel.text = DataManager.shared.name
         if currentReachabilityStatus == .reachable {
@@ -47,7 +63,7 @@ class HomeViewController: UIViewController, Storyboarded {
         } else {
             showAlertView("No InterNet Connection")
             setupCasesView(cases: 0)
-            setupHasCheckedView(hasChecked: false)
+            setupHasCheckedView(nil)
         }
     }
     
@@ -97,16 +113,16 @@ class HomeViewController: UIViewController, Storyboarded {
             switch response.result {
             case .success(let model):
                 if model.success {
-                    var hasChecked = false
+                    var data: SymptomsHistoryData?
                     for i in model.data! {
                         let date = i.date.toDate().toText(with: "yyyy-MM-dd")
                         let today = Date().toText(with: "yyyy-MM-dd")
                         if date == today {
-                            hasChecked = true
+                            data = i
                         }
                     }
                     self.syptomData = model.data
-                    self.setupHasCheckedView(hasChecked: hasChecked)
+                    self.setupHasCheckedView(data)
                 } else {
                     self.showAlertView(model.message!)
                 }
@@ -117,18 +133,35 @@ class HomeViewController: UIViewController, Storyboarded {
         }
     }
     
-    func setupHasCheckedView(hasChecked: Bool) {
-        if hasChecked {
+    func setupHasCheckedView(_ data: SymptomsHistoryData?) {
+        if let symptomData = data {
+            setupReportView(data: symptomData)
             checkView.isHidden = false
             uncheckedView.isHidden = true
             checkButton.setTitle("Re-check in", for: .normal)
-            noReportView.isHidden = true
+            noReportContainerView.isHidden = true
+            reportView.isHidden = false
         } else {
             checkView.isHidden = true
             uncheckedView.isHidden = false
             checkButton.setTitle("Why do this?", for: .normal)
-            noReportView.isHidden = false
+            noReportContainerView.isHidden = false
+            reportView.isHidden = true
         }
+    }
+    
+    func setupReportView(data: SymptomsHistoryData) {
+        if data.probability_infection >= 60 {
+            repportTopView.backgroundColor = .brandRed
+            reportStatusLabel.text = "CALL TO DOCTOR"
+            detailLabel.text = "You may be infected with a virus"
+        } else {
+            repportTopView.backgroundColor = .brandGreen
+            reportStatusLabel.text = "CLEAR"
+            detailLabel.text = "* Wear mask.  Keep 2m distance.  Wash hands."
+        }
+        reportDateLabel.text = data.date.toDate().toText(with: "dd/MM")
+        reportTimeLabel.text = data.date.toDate().toText(with: "/yyyy hh:mm a")
     }
     
     func setupCasesView(cases: Int) {
@@ -141,10 +174,12 @@ class HomeViewController: UIViewController, Storyboarded {
         }
     }
     
-    func shareAction() {
+    func doShareAction() {
         var shareText = ""
-        
-        for i in self.syptomData {
+        guard let symptoms = syptomData else {
+            return
+        }
+        for i in symptoms {
             let date = i.date.toDate().toText(with: "yyyy-MM-dd")
             let today = Date().toText(with: "yyyy-MM-dd")
             if date == today {
