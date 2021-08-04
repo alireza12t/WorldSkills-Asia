@@ -505,20 +505,20 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="323" height="129"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
-                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3vL-cW-CHF">
-                                                                                    <rect key="frame" x="10" y="10" width="313" height="89"/>
+                                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3vL-cW-CHF">
+                                                                                    <rect key="frame" x="20" y="10" width="303" height="89"/>
                                                                                     <subviews>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="AYq-kp-HJh">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="144" height="89"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="134.5" height="89"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t31-Z9-MaC">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="144" height="56"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="134.5" height="56"/>
                                                                                                     <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="24"/>
                                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
-                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WSA Care" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4V-FB-yEi">
-                                                                                                    <rect key="frame" x="0.0" y="56" width="144" height="33"/>
+                                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WSA Care" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Q4V-FB-yEi">
+                                                                                                    <rect key="frame" x="0.0" y="56" width="134.5" height="33"/>
                                                                                                     <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -526,16 +526,16 @@
                                                                                             </subviews>
                                                                                         </stackView>
                                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="aeC-X7-Hod">
-                                                                                            <rect key="frame" x="154" y="0.0" width="159" height="89"/>
+                                                                                            <rect key="frame" x="149.5" y="0.0" width="153.5" height="89"/>
                                                                                             <subviews>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Lh-R2-OpK">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="159" height="56"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="153.5" height="56"/>
                                                                                                     <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="24"/>
                                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
                                                                                                 </label>
                                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WSA Care" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaI-k3-tNT">
-                                                                                                    <rect key="frame" x="0.0" y="56" width="159" height="33"/>
+                                                                                                    <rect key="frame" x="0.0" y="56" width="153.5" height="33"/>
                                                                                                     <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="14"/>
                                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                                     <nil key="highlightedColor"/>
@@ -547,7 +547,7 @@
                                                                             </subviews>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <constraints>
-                                                                                <constraint firstItem="3vL-cW-CHF" firstAttribute="leading" secondItem="7Q5-nn-ZT7" secondAttribute="leading" constant="10" id="K9x-29-i34"/>
+                                                                                <constraint firstItem="3vL-cW-CHF" firstAttribute="leading" secondItem="7Q5-nn-ZT7" secondAttribute="leading" constant="20" id="K9x-29-i34"/>
                                                                                 <constraint firstAttribute="bottom" secondItem="3vL-cW-CHF" secondAttribute="bottom" constant="30" id="Qhl-z6-Pog"/>
                                                                                 <constraint firstAttribute="trailing" secondItem="3vL-cW-CHF" secondAttribute="trailing" id="m9i-Xl-tbT"/>
                                                                                 <constraint firstItem="3vL-cW-CHF" firstAttribute="top" secondItem="7Q5-nn-ZT7" secondAttribute="top" constant="10" id="yD3-jb-VWw"/>

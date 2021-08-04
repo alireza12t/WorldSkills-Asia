@@ -313,15 +313,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.numberLabel.text = "\(statsData.world.infected)"
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             cell.topDetailLabel.text = "Over all world"
+            cell.bottomDetailLabel.text = "\(statsData.current_city.infected) cases in your city"
         case 1:
             cell.titleLabel.text = "Deaths"
             cell.numberLabel.text = "\(statsData.world.death)"
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             cell.topDetailLabel.text = "Over all world"
+            cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(16)
+            cell.bottomDetailLabel.text = "\(statsData.current_city.death) death in your city"
         case 2:
             cell.titleLabel.text = "Recovered"
             cell.numberLabel.text = "\(statsData.world.recovered)"
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(20)
+            cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(16)
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             let adults = Float(statsData.current_city.recovered_adults)/Float(statsData.world.recovered_adults)
             let young = Float(statsData.current_city.recoveredYoung)/Float(statsData.world.recoveredYoung)
