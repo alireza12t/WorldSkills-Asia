@@ -327,13 +327,16 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(20)
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(16)
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
-            let adults = Float(statsData.current_city.recovered_adults)/Float(statsData.world.recovered_adults)
-            let young = Float(statsData.current_city.recovered_young)/Float(statsData.world.recovered_young)
-            cell.topDetailLabel.text = "\(adults)% - adults"
-            cell.bottomDetailLabel.text = "\(young)% - young"
+            var adults = Double(statsData.current_city.recovered_adults)/Double(statsData.world.recovered_adults)
+            var young = Double(statsData.current_city.recovered_young)/Double(statsData.world.recovered_young)
+            adults = Double(round(100*adults)/100)
+            young = Double(round(100*young)/100)
+            cell.topDetailLabel.text = "\(round(adults))% - adults"
+            cell.bottomDetailLabel.text = "\(round(young))% - young"
         case 3:
             cell.titleLabel.text = "In your city"
-            let vaccinated = Float(statsData.current_city.vaccinated)/Float(statsData.world.vaccinated)
+            var vaccinated = Double(statsData.current_city.vaccinated)/Double(statsData.world.vaccinated)
+            vaccinated = Double(round(100*vaccinated)/100)
             if vaccinated > 50 {
                 cell.bottomDetailLabel.text = "Keep it going and ask friends to get vaccine"
             } else {
