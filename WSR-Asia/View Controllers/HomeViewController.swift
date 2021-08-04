@@ -10,7 +10,6 @@ import Alamofire
 
 class HomeViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var noReportContainerView: UIView!
     @IBOutlet weak var noReportView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet var alertView: UIView!
@@ -33,6 +32,11 @@ class HomeViewController: UIViewController, Storyboarded {
     
     @IBAction func shareButtonDidTap(_ sender: Any) {
         doShareAction()
+    }
+    
+    @IBAction func qrCodeButtonDidTap(_ sender: Any) {
+        let vc = QRCodeViewController.instantiate("Main")
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     var syptomData: [SymptomsHistoryData]!
@@ -141,15 +145,16 @@ class HomeViewController: UIViewController, Storyboarded {
             checkView.isHidden = false
             uncheckedView.isHidden = true
             checkButton.setTitle("Re-check in", for: .normal)
-            noReportContainerView.isHidden = true
+            noReportView.isHidden = true
             reportView.isHidden = false
         } else {
             checkView.isHidden = true
             uncheckedView.isHidden = false
             checkButton.setTitle("Why do this?", for: .normal)
-            noReportContainerView.isHidden = false
+            noReportView.isHidden = false
             reportView.isHidden = true
         }
+        view.layoutSubviews()
     }
     
     func setupReportView(data: SymptomsHistoryData) {
