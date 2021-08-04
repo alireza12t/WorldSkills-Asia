@@ -34,8 +34,10 @@ class HomeViewController: UIViewController, Storyboarded {
     @IBOutlet weak var bluLineWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var weekStackView: UIStackView!
     @IBOutlet weak var weekReportContainerView: UIView!
-    @IBOutlet weak var collectionContainerView: UIView!
+    @IBOutlet weak var statsContainerView: UIView!
     @IBOutlet weak var pagerControll: UIPageControl!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var fakeView: UIView!
     
     @IBAction func shareButtonDidTap(_ sender: Any) {
         doShareAction()
@@ -47,6 +49,7 @@ class HomeViewController: UIViewController, Storyboarded {
     }
     
     var syptomData: [SymptomsHistoryData]!
+    var statsData: CoivdStatsData = CoivdStats.exampleData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,8 +62,9 @@ class HomeViewController: UIViewController, Storyboarded {
         noReportView.layer.cornerRadius = 20
         reportView.layer.cornerRadius = 20
         checkInButton.layer.cornerRadius = 20
-        collectionContainerView.layer.cornerRadius = 20
+        statsContainerView.layer.cornerRadius = 20
         weekReportContainerView.layer.cornerRadius = 16
+        fakeView.layer.cornerRadius = 20
         setupCasesView(cases: 0)
         checkButton.underline()
         setupHasCheckedView(nil)
@@ -77,10 +81,12 @@ class HomeViewController: UIViewController, Storyboarded {
         if currentReachabilityStatus == .reachable {
             getCases()
             getSymptomsHistory()
+            getCoivdStats()
         } else {
             showAlertView("No InterNet Connection")
             setupCasesView(cases: 0)
             setupHasCheckedView(nil)
+            statsContainerView.isHidden = true
         }
     }
     
@@ -110,10 +116,12 @@ class HomeViewController: UIViewController, Storyboarded {
             print(response.result)
             switch response.result {
             case .success(let model):
-                if model.success {
-                    self.setupCasesView(cases: model.data!)
-                } else {
-                    self.showAlertView(model.message!)
+                DispatchQueue.main.async {
+                    if model.success {
+                        self.setupCasesView(cases: model.data!)
+                    } else {
+                        self.showAlertView(model.message!)
+                    }
                 }
             case .failure(_):
                 break
@@ -145,11 +153,15 @@ class HomeViewController: UIViewController, Storyboarded {
                     if todayIndex == -1 {
                         list.append(nil)
                     }
-                    self.setupWeeklyReport(list: list)
-                    self.syptomData = model.data
-                    self.setupHasCheckedView(data)
+                    DispatchQueue.main.async {
+                        self.setupWeeklyReport(list: list)
+                        self.syptomData = model.data
+                        self.setupHasCheckedView(data)
+                    }
                 } else {
-                    self.showAlertView(model.message!)
+                    DispatchQueue.main.async {
+                        self.showAlertView(model.message!)
+                    }
                 }
                 print(model)
             case .failure(_):
@@ -255,9 +267,37 @@ extension HomeViewController {
         bluLineWidthConstraint.constant = 221 * CGFloat(CGFloat(list.count)/CGFloat(7))
         self.view.layoutSubviews()
     }
+    
+    func getCoivdStats() {
+        let url = "https://wsa2021.mad.hakta.pro/api/covid_stats"
+        
+        
+        AF.request(url, method: .get).responseDecodable(of: CoivdStats.self) { (response) in
+            print(response.result)
+            switch response.result {
+            case .success(let model):
+                DispatchQueue.main.async {
+                    if model.success {
+                        self.statsData = model.data!
+                        self.setupStatsView(data: model.data!)
+                    } else {
+                        self.statsContainerView.isHidden = true
+                        self.showAlertView(model.message!)
+                    }
+                }
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
+    func setupStatsView(data: CoivdStatsData) {
+        self.collectionView.reloadData()
+        self.statsContainerView.isHidden = false
+    }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count = 4
         pagerControll.numberOfPages = count
@@ -265,10 +305,51 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DataCollectionViewCell", for: indexPath) as! DataCollectionViewCell
+        
+        switch indexPath.row {
+        case 0:
+            cell.titleLabel.text = "Infection cases"
+            cell.numberLabel.text = "\(statsData.world.infected)"
+            cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
+            cell.topDetailLabel.text = "Over all world"
+        case 1:
+            cell.titleLabel.text = "Deaths"
+            cell.numberLabel.text = "\(statsData.world.death)"
+            cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
+            cell.topDetailLabel.text = "Over all world"
+        case 2:
+            cell.titleLabel.text = "Recovered"
+            cell.numberLabel.text = "\(statsData.world.recovered)"
+            cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(20)
+            cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
+            let adults = Float(statsData.current_city.recovered_adults)/Float(statsData.world.recovered_adults)
+            let young = Float(statsData.current_city.recoveredYoung)/Float(statsData.world.recoveredYoung)
+            cell.topDetailLabel.text = "\(adults)% - adults"
+            cell.bottomDetailLabel.text = "\(young)% - young"
+        case 3:
+            cell.titleLabel.text = "In your city"
+            let vaccinated = Float(statsData.current_city.vaccinated)/Float(statsData.world.vaccinated)
+            if vaccinated > 50 {
+                cell.bottomDetailLabel.text = "Keep it going and ask friends to get vaccine"
+            } else {
+                cell.bottomDetailLabel.text = "It’s very bad result for making world safe"
+            }
+            cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(16)
+            cell.topDetailLabel.text = "People vaccinated"
+            cell.numberLabel.text = "\(vaccinated)%"
+        default:
+            break
+        }
+        return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pagerControll.currentPage = indexPath.row
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let size = collectionView.bounds.size
+        return CGSize(width: size.width, height: size.height - 8)
     }
 }
