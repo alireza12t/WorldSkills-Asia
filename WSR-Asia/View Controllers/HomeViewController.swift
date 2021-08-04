@@ -34,7 +34,8 @@ class HomeViewController: UIViewController, Storyboarded {
     @IBOutlet weak var bluLineWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var weekStackView: UIStackView!
     @IBOutlet weak var weekReportContainerView: UIView!
-    
+    @IBOutlet weak var collectionContainerView: UIView!
+    @IBOutlet weak var pagerControll: UIPageControl!
     
     @IBAction func shareButtonDidTap(_ sender: Any) {
         doShareAction()
@@ -58,12 +59,15 @@ class HomeViewController: UIViewController, Storyboarded {
         noReportView.layer.cornerRadius = 20
         reportView.layer.cornerRadius = 20
         checkInButton.layer.cornerRadius = 20
-        weekReportContainerView.layer.cornerRadius = 20
+        collectionContainerView.layer.cornerRadius = 20
+        weekReportContainerView.layer.cornerRadius = 16
         setupCasesView(cases: 0)
         checkButton.underline()
         setupHasCheckedView(nil)
         reportBottomView.roundUpSpecificCorners(20, corners: [.bottomRight, .bottomRight])
         repportTopView.roundUpSpecificCorners(20, corners: [.topLeft, .topRight])
+        pagerControll.transform = CGAffineTransform(rotationAngle: .pi/2)
+        view.layoutSubviews()
     }
     
     func fillUI() {
@@ -250,5 +254,21 @@ extension HomeViewController {
         }
         bluLineWidthConstraint.constant = 221 * CGFloat(CGFloat(list.count)/CGFloat(7))
         self.view.layoutSubviews()
+    }
+}
+
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let count = 4
+        pagerControll.numberOfPages = count
+        return count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "", for: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        pagerControll.currentPage = indexPath.row
     }
 }

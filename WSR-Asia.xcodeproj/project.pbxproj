@@ -53,6 +53,7 @@
 		F577A28926BA63C40006B651 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28826BA63C40006B651 /* UIViewExtension.swift */; };
 		F577A28B26BA6A200006B651 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28A26BA6A200006B651 /* QRCodeViewController.swift */; };
 		F577A28D26BA71880006B651 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28C26BA71880006B651 /* QR.swift */; };
+		F577A28F26BA88C90006B651 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28E26BA88C90006B651 /* DataCollectionViewCell.swift */; };
 		F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382026B914AD003359EE /* AppDelegate.swift */; };
 		F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382226B914AD003359EE /* SceneDelegate.swift */; };
 		F5D6382526B914AD003359EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382426B914AD003359EE /* LoginViewController.swift */; };
@@ -122,6 +123,7 @@
 		F577A28826BA63C40006B651 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F577A28A26BA6A200006B651 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		F577A28C26BA71880006B651 /* QR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QR.swift; sourceTree = "<group>"; };
+		F577A28E26BA88C90006B651 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		F5D6381D26B914AD003359EE /* WSR-Asia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSR-Asia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D6382026B914AD003359EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D6382226B914AD003359EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F577A29026BA88D20006B651 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F577A28E26BA88C90006B651 /* DataCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F5D6381426B914AC003359EE = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 				F5D6383426B9289D003359EE /* Helpers */,
 				F5D6382026B914AD003359EE /* AppDelegate.swift */,
 				F5D6382226B914AD003359EE /* SceneDelegate.swift */,
+				F577A29026BA88D20006B651 /* Cells */,
 				F5D6384026B93539003359EE /* View Controllers */,
 				F5D6382626B914AD003359EE /* Main.storyboard */,
 				F5D6382926B914AF003359EE /* Assets.xcassets */,
@@ -471,6 +482,7 @@
 				F5D6383B26B92FD4003359EE /* SignIn.swift in Sources */,
 				F5D6384826B93879003359EE /* SymptomsHistory.swift in Sources */,
 				F5D6384426B9355E003359EE /* HomeViewController.swift in Sources */,
+				F577A28F26BA88C90006B651 /* DataCollectionViewCell.swift in Sources */,
 				F5D6382526B914AD003359EE /* LoginViewController.swift in Sources */,
 				F5D6384E26B9434C003359EE /* UIButtonExtension.swift in Sources */,
 				F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */,
