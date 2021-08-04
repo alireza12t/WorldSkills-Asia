@@ -655,6 +655,48 @@
             </objects>
             <point key="canvasLocation" x="711.59420289855075" y="790.84821428571422"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Nh7-F1-azu">
+            <objects>
+                <viewController id="TjT-20-nEO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fKL-8j-VYa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WSA Care" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KuF-Bm-EkL">
+                                <rect key="frame" x="152" y="64" width="110.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="u1j-A1-9HB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dmo-ea-iEd">
+                                <rect key="frame" x="46" y="67" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="2Cj-Jx-p6Q"/>
+                                    <constraint firstAttribute="height" constant="24" id="9Eq-Ty-0RM"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="qrcode" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GeY-Ho-yGG"/>
+                        <color key="backgroundColor" name="brandBlue"/>
+                        <constraints>
+                            <constraint firstItem="Dmo-ea-iEd" firstAttribute="centerY" secondItem="KuF-Bm-EkL" secondAttribute="centerY" id="F7h-Gp-2ly"/>
+                            <constraint firstItem="KuF-Bm-EkL" firstAttribute="top" secondItem="GeY-Ho-yGG" secondAttribute="top" constant="20" id="RBb-HL-FvN"/>
+                            <constraint firstItem="Dmo-ea-iEd" firstAttribute="leading" secondItem="GeY-Ho-yGG" secondAttribute="leading" constant="46" id="cdm-zU-WNU"/>
+                            <constraint firstItem="KuF-Bm-EkL" firstAttribute="centerX" secondItem="GeY-Ho-yGG" secondAttribute="centerX" id="gIC-cm-qXh"/>
+                            <constraint firstItem="KuF-Bm-EkL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dmo-ea-iEd" secondAttribute="trailing" constant="5" id="mlM-jY-S9w"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lR4-j2-yJz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1422" y="791"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="T0A-NR-iK5">
             <objects>
