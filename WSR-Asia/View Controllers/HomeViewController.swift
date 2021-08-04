@@ -30,6 +30,12 @@ class HomeViewController: UIViewController, Storyboarded {
     @IBOutlet weak var reportTimeLabel: UILabel!
     @IBOutlet weak var reportBottomView: UIView!
     
+    //MARK: - Session 2
+    @IBOutlet weak var bluLineWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var weekStackView: UIStackView!
+    @IBOutlet weak var weekReportContainerView: UIView!
+    
+    
     @IBAction func shareButtonDidTap(_ sender: Any) {
         doShareAction()
     }
@@ -52,6 +58,7 @@ class HomeViewController: UIViewController, Storyboarded {
         noReportView.layer.cornerRadius = 20
         reportView.layer.cornerRadius = 20
         checkInButton.layer.cornerRadius = 20
+        weekReportContainerView.layer.cornerRadius = 20
         setupCasesView(cases: 0)
         checkButton.underline()
         setupHasCheckedView(nil)
@@ -120,13 +127,21 @@ class HomeViewController: UIViewController, Storyboarded {
             case .success(let model):
                 if model.success {
                     var data: SymptomsHistoryData?
-                    for i in model.data! {
-                        let date = i.date.toDate().toText(with: "yyyy-MM-dd")
+                    var list = [Bool?]()
+                    var todayIndex = -1
+                    for i in 0 ..< model.data!.count {
+                        let date = model.data![i].date.toDate().toText(with: "yyyy-MM-dd")
                         let today = Date().toText(with: "yyyy-MM-dd")
                         if date == today {
-                            data = i
+                            data = model.data![i]
+                            todayIndex = i
                         }
+                        list.append(model.data![i].probability_infection >= 60)
                     }
+                    if todayIndex == -1 {
+                        list.append(nil)
+                    }
+                    self.setupWeeklyReport(list: list)
                     self.syptomData = model.data
                     self.setupHasCheckedView(data)
                 } else {
@@ -200,5 +215,40 @@ class HomeViewController: UIViewController, Storyboarded {
         
         let shareAlert = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
         present(shareAlert, animated: true)
+    }
+}
+
+//MARK: - Session 2
+extension HomeViewController {
+    func setupWeeklyReport(list: [Bool?]) {
+        
+        for i in 0 ..< list.count {
+            let imageView = UIImageView()
+            if i < list.count - 1 {
+                if list[i]! {
+                    imageView.image = UIImage(named: "smallRed")!
+                } else {
+                    imageView.image = UIImage(named: "smallBlue")!
+                }
+            } else {
+                if let status = list[i] {
+                    if status {
+                        imageView.image = UIImage(named: "bigRed")!
+                    } else {
+                        imageView.image = UIImage(named: "bigBlue")!
+                    }
+                } else {
+                    imageView.image = UIImage(named: "emptyBlue")!
+                }
+            }
+            weekStackView.addArrangedSubview(imageView)
+        }
+        for _ in 0 ..< (7-list.count) {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: "emptyGray")!
+            weekStackView.addArrangedSubview(imageView)
+        }
+        bluLineWidthConstraint.constant = 221 * CGFloat(CGFloat(list.count)/CGFloat(7))
+        self.view.layoutSubviews()
     }
 }
