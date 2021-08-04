@@ -328,7 +328,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(16)
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             let adults = Float(statsData.current_city.recovered_adults)/Float(statsData.world.recovered_adults)
-            let young = Float(statsData.current_city.recoveredYoung)/Float(statsData.world.recoveredYoung)
+            let young = Float(statsData.current_city.recovered_young)/Float(statsData.world.recovered_young)
             cell.topDetailLabel.text = "\(adults)% - adults"
             cell.bottomDetailLabel.text = "\(young)% - young"
         case 3:

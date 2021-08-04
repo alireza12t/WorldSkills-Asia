@@ -13,7 +13,7 @@ struct CoivdStats: Codable {
     var error, message, title: String?
     
     static func exampleData() -> CoivdStatsData {
-        CoivdStatsData(world: CurrentCity(infected: 1, death: 1, recovered: 1, vaccinated: 1, recovered_adults: 1, recoveredYoung: 1), current_city: CurrentCity(infected: 0, death: 0, recovered: 0, vaccinated: 0, recovered_adults: 0, recoveredYoung: 0))
+        CoivdStatsData(world: CurrentCity(infected: 1, death: 1, recovered: 1, vaccinated: 1, recovered_adults: 1, recovered_young: 1), current_city: CurrentCity(infected: 0, death: 0, recovered: 0, vaccinated: 0, recovered_adults: 0, recovered_young: 0))
     }
 }
 
@@ -23,5 +23,5 @@ struct CoivdStatsData: Codable {
 
 struct CurrentCity: Codable {
     let infected, death, recovered, vaccinated: Int
-    let recovered_adults, recoveredYoung: Int
+    let recovered_adults, recovered_young: Int
 }
