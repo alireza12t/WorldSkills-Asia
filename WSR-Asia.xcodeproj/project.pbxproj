@@ -50,6 +50,7 @@
 		05A9690026B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A968D626B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf */; };
 		05A9690126B91E8100DC509C /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A968D726B91E8100DC509C /* ProximaNova-Bold.ttf */; };
 		06CA08D3AD64C24B42057E47 /* Pods_WSR_Asia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */; };
+		F577A28926BA63C40006B651 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28826BA63C40006B651 /* UIViewExtension.swift */; };
 		F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382026B914AD003359EE /* AppDelegate.swift */; };
 		F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382226B914AD003359EE /* SceneDelegate.swift */; };
 		F5D6382526B914AD003359EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382426B914AD003359EE /* LoginViewController.swift */; };
@@ -116,6 +117,7 @@
 		97F2DAFB17640F3DCCC4F1EF /* Pods-WSR-Asia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSR-Asia.release.xcconfig"; path = "Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia.release.xcconfig"; sourceTree = "<group>"; };
 		ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSR-Asia.debug.xcconfig"; path = "Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia.debug.xcconfig"; sourceTree = "<group>"; };
 		F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSR_Asia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F577A28826BA63C40006B651 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F5D6381D26B914AD003359EE /* WSR-Asia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSR-Asia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D6382026B914AD003359EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D6382226B914AD003359EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				F5D6384926B93BF7003359EE /* DateExtension.swift */,
 				F5D6384B26B940AF003359EE /* UIColorExtension.swift */,
 				F5D6384D26B9434C003359EE /* UIButtonExtension.swift */,
+				F577A28826BA63C40006B651 /* UIViewExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				F5D6384626B9384D003359EE /* Cases.swift in Sources */,
 				F5D6383D26B9304B003359EE /* DataManagerr.swift in Sources */,
 				F5D6384226B93555003359EE /* SplashViewController.swift in Sources */,
+				F577A28926BA63C40006B651 /* UIViewExtension.swift in Sources */,
 				F5D6384A26B93BF7003359EE /* DateExtension.swift in Sources */,
 				F5D6383B26B92FD4003359EE /* SignIn.swift in Sources */,
 				F5D6384826B93879003359EE /* SymptomsHistory.swift in Sources */,

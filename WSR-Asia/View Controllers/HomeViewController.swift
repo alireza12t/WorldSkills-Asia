@@ -51,6 +51,8 @@ class HomeViewController: UIViewController, Storyboarded {
         setupCasesView(cases: 0)
         checkButton.underline()
         setupHasCheckedView(nil)
+        reportBottomView.roundUpSpecificCorners(20, corners: [.bottomRight, .bottomRight])
+        repportTopView.roundUpSpecificCorners(20, corners: [.topLeft, .topRight])
     }
     
     func fillUI() {
