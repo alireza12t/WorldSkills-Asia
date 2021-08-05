@@ -116,26 +116,9 @@ class CheckListViewController: UIViewController, Storyboarded {
             request.httpMethod = "POST"
             request.httpBody = try! JSONSerialization.data(withJSONObject: selectedSymptoms)
             
-//            AF.upload(multipartFormData: { (multipartFormData) in
-//
-//                 for (key, value) in param {
-//                     multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
-//                 }
-//
-//                 for img in arrImage {
-//                     guard let imgData = img.jpegData(compressionQuality: 1) else { return }
-//                     multipartFormData.append(imgData, withName: imageKey, fileName: FuncationManager.getCurrentTimeStamp() + ".jpeg", mimeType: "image/jpeg")
-//                 }
-//
-//
-//             }
-            let params = NSMutableDictionary()
-            
             AF.upload(multipartFormData: { (multipartFormData) in
                 guard let imgData = image.jpegData(compressionQuality: 1) else { return }
                 multipartFormData.append(imgData, withName: "file", fileName: "\(DataManager.shared.name)" + ".jpeg", mimeType: "image/jpeg")
-                
-                
             }, with: request, usingThreshold: UInt64(), fileManager: .default).responseDecodable(of: UpdateSymptom.self) { (response) in
                 switch response.result {
                 case .success(let model):

@@ -308,7 +308,7 @@ extension HomeViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = 4
+        let count = 5
         pagerControll.numberOfPages = count
         return count
     }
@@ -318,19 +318,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch indexPath.row {
         case 0:
+            cell.titleLabel.text = "That you in safe"
+            cell.numberLabel.text = "Be Sure"
+            cell.topDetailLabel.isHidden = true
+            cell.bottomDetailLabel.text = "Upload your contacts to our server and we will keep you in touch about infection cases"
+        case 1:
             cell.titleLabel.text = "Infection cases"
             cell.numberLabel.text = "\(statsData.world.infected)"
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             cell.topDetailLabel.text = "Over all world"
             cell.bottomDetailLabel.text = "\(statsData.current_city.infected) cases in your city"
-        case 1:
+        case 2:
             cell.titleLabel.text = "Deaths"
             cell.numberLabel.text = "\(statsData.world.death)"
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             cell.topDetailLabel.text = "Over all world"
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(16)
             cell.bottomDetailLabel.text = "\(statsData.current_city.death) death in your city"
-        case 2:
+        case 3:
             cell.titleLabel.text = "Recovered"
             cell.numberLabel.text = "\(statsData.world.recovered)"
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(20)
@@ -342,7 +347,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             young = Double(round(100*young)/100)
             cell.topDetailLabel.text = "\(round(adults))% - adults"
             cell.bottomDetailLabel.text = "\(round(young))% - young"
-        case 3:
+        case 4:
             cell.titleLabel.text = "In your city"
             var vaccinated = Double(statsData.current_city.vaccinated)/Double(statsData.world.vaccinated)
             vaccinated = Double(round(100*vaccinated)/100)
