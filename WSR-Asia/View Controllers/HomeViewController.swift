@@ -186,14 +186,14 @@ class HomeViewController: UIViewController, Storyboarded {
         if let symptomData = data {
             setupReportView(data: symptomData)
             checkView.isHidden = false
+            checkButton.setTitle("Why do this?", for: .normal)
             uncheckedView.isHidden = true
-            checkButton.setTitle("Re-check in", for: .normal)
             noReportView.isHidden = true
             reportView.isHidden = false
         } else {
             checkView.isHidden = true
             uncheckedView.isHidden = false
-            checkButton.setTitle("Why do this?", for: .normal)
+            checkButton.setTitle("Re-check in", for: .normal)
             noReportView.isHidden = false
             reportView.isHidden = true
         }
@@ -455,7 +455,6 @@ extension HomeViewController: CNContactPickerDelegate {
                             self.showAlertView(model.message!)
                         }
                     }
-                    print(model)
                 case .failure(_):
                     break
                 }
