@@ -328,6 +328,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             if DataManager.shared.contactDataUploaded {
                 cell.numberLabel.font = cell.numberLabel.font.withSize(32)
                 cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(32)
+                cell.titleLabel.font = cell.titleLabel.font.withSize(14)
+                cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(14)
                 cell.titleLabel.text = "in your contacts list"
                 cell.topDetailLabel.isHidden = false
                 
