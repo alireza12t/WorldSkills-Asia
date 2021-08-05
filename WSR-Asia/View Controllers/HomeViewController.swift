@@ -48,6 +48,11 @@ class HomeViewController: UIViewController, Storyboarded {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func checkInNowButtonDidTap(_ sender: Any) {
+        let vc = CheckListViewController.instantiate("Main")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     var syptomData: [SymptomsHistoryData]!
     var statsData: CoivdStatsData = CoivdStats.exampleData()
     
@@ -264,7 +269,11 @@ extension HomeViewController {
             imageView.image = UIImage(named: "emptyGray")!
             weekStackView.addArrangedSubview(imageView)
         }
-        bluLineWidthConstraint.constant = 221 * CGFloat(CGFloat(list.count)/CGFloat(7))
+        if list.last == nil {
+            bluLineWidthConstraint.constant = 221 * CGFloat(CGFloat(list.count-1)/CGFloat(7))
+        } else {
+            bluLineWidthConstraint.constant = 221 * CGFloat(CGFloat(list.count)/CGFloat(7))
+        }
         self.view.layoutSubviews()
     }
     
