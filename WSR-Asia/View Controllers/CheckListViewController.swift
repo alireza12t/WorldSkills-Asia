@@ -53,8 +53,17 @@ class CheckListViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func confirmButtonDidTap(_ sender: Any) {
-        uploadSymptoms()
-        uploadPhoto()
+        let alert = UIAlertController(title: "", message: "Are you sure you will submit this information?", preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [weak self] _ in
+            self?.uploadSymptoms()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { _ in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func plusButtonDidTap(_ sender: Any) {
@@ -88,8 +97,9 @@ class CheckListViewController: UIViewController, Storyboarded {
         confirmButton.layer.cornerRadius = 20
         plusButton.layer.borderWidth = 4
         plusButton.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 4
+        imageView.layer.borderColor = UIColor.white.cgColor
         notNowButton.underline()
-        tableView.allowsSelection = false
     }
     
     func showAlertView(error: String = "You need to have access to internet") {
@@ -98,7 +108,54 @@ class CheckListViewController: UIViewController, Storyboarded {
     }
     
     func uploadPhoto() {
-        
+        if let image = selectedImage {
+        if let url = URL(string: "https://wsa2021.mad.hakta.pro/api/daily_photo") {
+            var request = URLRequest(url: url)
+            
+            request.headers = ["Content-type": "multipart/form-data"]
+            request.httpMethod = "POST"
+            request.httpBody = try! JSONSerialization.data(withJSONObject: selectedSymptoms)
+            
+//            AF.upload(multipartFormData: { (multipartFormData) in
+//
+//                 for (key, value) in param {
+//                     multipartFormData.append((value as! String).data(using: String.Encoding.utf8)!, withName: key)
+//                 }
+//
+//                 for img in arrImage {
+//                     guard let imgData = img.jpegData(compressionQuality: 1) else { return }
+//                     multipartFormData.append(imgData, withName: imageKey, fileName: FuncationManager.getCurrentTimeStamp() + ".jpeg", mimeType: "image/jpeg")
+//                 }
+//
+//
+//             }
+            let params = NSMutableDictionary()
+            
+            AF.upload(multipartFormData: { (multipartFormData) in
+                guard let imgData = image.jpegData(compressionQuality: 1) else { return }
+                multipartFormData.append(imgData, withName: "file", fileName: "\(DataManager.shared.name)" + ".jpeg", mimeType: "image/jpeg")
+                
+                
+            }, with: request, usingThreshold: UInt64(), fileManager: .default).responseDecodable(of: UpdateSymptom.self) { (response) in
+                switch response.result {
+                case .success(let model):
+                    if model.success {
+                        DispatchQueue.main.async {
+                            self.navigationController?.popViewController(animated: true)
+                        }
+                    } else {
+                        self.showAlertView(error: "Failed to send symptoms!")
+                    }
+                case .failure(_):
+                    self.showAlertView(error: "Failed to send images!")
+                }
+            }
+        }
+        } else {
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
     }
     
     func uploadSymptoms() {
@@ -106,16 +163,19 @@ class CheckListViewController: UIViewController, Storyboarded {
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
             request.httpBody = try! JSONSerialization.data(withJSONObject: selectedSymptoms)
-                        
-            AF.request(request).response { (response) in
-                print(response.result)
+            
+            AF.request(request).responseDecodable(of: UpdateSymptom.self) { (response) in
                 switch response.result {
-                case .success(_):
-                    DispatchQueue.main.async {
-                        self.navigationController?.popViewController(animated: true)
+                case .success(let model):
+                    if model.success {
+                        DispatchQueue.main.async {
+                            self.uploadPhoto()
+                        }
+                    } else {
+                        self.showAlertView(error: "Failed to send symptoms!")
                     }
                 case .failure(_):
-                    break
+                    self.showAlertView(error: "Failed to send symptoms!")
                 }
             }
         }
@@ -146,6 +206,15 @@ extension CheckListViewController: UITableViewDelegate, UITableViewDataSource {
         tableViewHeight.constant = CGFloat(symptoms.count * 60) + 20
         tableView.isScrollEnabled = false
         view.layoutSubviews()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) as? CheckListTableViewCell {
+            cell.itemCheckBox.isSelected = true
+            selectedSymptoms.append(cell.itemCheckBox.tag)
+            tableView.beginUpdates()
+            tableView.endUpdates()
+        }
     }
     
     func getSymptoms() {
