@@ -12,6 +12,7 @@ enum UserDefaultKeys: String {
     case name
     case login
     case id
+    case contactDataUploaded
 }
 
 class DataManager {
@@ -24,6 +25,15 @@ class DataManager {
         }
         set (newValue) {
             UserDefaults.standard.setValue(newValue, forKey: UserDefaultKeys.token.rawValue)
+        }
+    }
+    
+    var contactDataUploaded: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: UserDefaultKeys.contactDataUploaded.rawValue)
+        }
+        set (newValue) {
+            UserDefaults.standard.setValue(newValue, forKey: UserDefaultKeys.contactDataUploaded.rawValue)
         }
     }
     

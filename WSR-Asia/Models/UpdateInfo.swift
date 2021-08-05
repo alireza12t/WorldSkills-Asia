@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct UpdateSymptom: Codable {
+struct UpdateInfo: Codable {
     let data: String?
     let success: Bool
     var error, message, title: String?

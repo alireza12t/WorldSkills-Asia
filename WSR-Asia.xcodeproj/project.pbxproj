@@ -58,7 +58,8 @@
 		F5D1FE5A26BBC05D00B9C293 /* CheckListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1FE5926BBC05D00B9C293 /* CheckListViewController.swift */; };
 		F5D1FE5C26BBC07500B9C293 /* CheckListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1FE5B26BBC07500B9C293 /* CheckListTableViewCell.swift */; };
 		F5D1FE5E26BBC64300B9C293 /* SymptomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1FE5D26BBC64300B9C293 /* SymptomList.swift */; };
-		F5D1FE6026BBD08C00B9C293 /* UpdateSymptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1FE5F26BBD08C00B9C293 /* UpdateSymptom.swift */; };
+		F5D1FE6026BBD08C00B9C293 /* UpdateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1FE5F26BBD08C00B9C293 /* UpdateInfo.swift */; };
+		F5D1FE6226BBD89900B9C293 /* ContactsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D1FE6126BBD89900B9C293 /* ContactsInfo.swift */; };
 		F5D6382126B914AD003359EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382026B914AD003359EE /* AppDelegate.swift */; };
 		F5D6382326B914AD003359EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382226B914AD003359EE /* SceneDelegate.swift */; };
 		F5D6382526B914AD003359EE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6382426B914AD003359EE /* LoginViewController.swift */; };
@@ -133,7 +134,8 @@
 		F5D1FE5926BBC05D00B9C293 /* CheckListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListViewController.swift; sourceTree = "<group>"; };
 		F5D1FE5B26BBC07500B9C293 /* CheckListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckListTableViewCell.swift; sourceTree = "<group>"; };
 		F5D1FE5D26BBC64300B9C293 /* SymptomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomList.swift; sourceTree = "<group>"; };
-		F5D1FE5F26BBD08C00B9C293 /* UpdateSymptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSymptom.swift; sourceTree = "<group>"; };
+		F5D1FE5F26BBD08C00B9C293 /* UpdateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateInfo.swift; sourceTree = "<group>"; };
+		F5D1FE6126BBD89900B9C293 /* ContactsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInfo.swift; sourceTree = "<group>"; };
 		F5D6381D26B914AD003359EE /* WSR-Asia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WSR-Asia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5D6382026B914AD003359EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5D6382226B914AD003359EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -311,7 +313,8 @@
 				F577A28C26BA71880006B651 /* QR.swift */,
 				F577A29126BA8D570006B651 /* CovidStats.swift */,
 				F5D1FE5D26BBC64300B9C293 /* SymptomList.swift */,
-				F5D1FE5F26BBD08C00B9C293 /* UpdateSymptom.swift */,
+				F5D1FE5F26BBD08C00B9C293 /* UpdateInfo.swift */,
+				F5D1FE6126BBD89900B9C293 /* ContactsInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D1FE6226BBD89900B9C293 /* ContactsInfo.swift in Sources */,
 				F5D6383F26B93401003359EE /* Coordinator.swift in Sources */,
 				F5D6384C26B940AF003359EE /* UIColorExtension.swift in Sources */,
 				F577A28D26BA71880006B651 /* QR.swift in Sources */,
@@ -497,7 +501,7 @@
 				F5D6384226B93555003359EE /* SplashViewController.swift in Sources */,
 				F577A28926BA63C40006B651 /* UIViewExtension.swift in Sources */,
 				F5D6384A26B93BF7003359EE /* DateExtension.swift in Sources */,
-				F5D1FE6026BBD08C00B9C293 /* UpdateSymptom.swift in Sources */,
+				F5D1FE6026BBD08C00B9C293 /* UpdateInfo.swift in Sources */,
 				F5D6383B26B92FD4003359EE /* SignIn.swift in Sources */,
 				F5D6384826B93879003359EE /* SymptomsHistory.swift in Sources */,
 				F5D6384426B9355E003359EE /* HomeViewController.swift in Sources */,

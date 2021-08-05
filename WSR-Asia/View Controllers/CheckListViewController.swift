@@ -119,7 +119,7 @@ class CheckListViewController: UIViewController, Storyboarded {
             AF.upload(multipartFormData: { (multipartFormData) in
                 guard let imgData = image.jpegData(compressionQuality: 1) else { return }
                 multipartFormData.append(imgData, withName: "file", fileName: "\(DataManager.shared.name)" + ".jpeg", mimeType: "image/jpeg")
-            }, with: request, usingThreshold: UInt64(), fileManager: .default).responseDecodable(of: UpdateSymptom.self) { (response) in
+            }, with: request, usingThreshold: UInt64(), fileManager: .default).responseDecodable(of: UpdateInfo.self) { (response) in
                 switch response.result {
                 case .success(let model):
                     if model.success {
@@ -147,7 +147,7 @@ class CheckListViewController: UIViewController, Storyboarded {
             request.httpMethod = "POST"
             request.httpBody = try! JSONSerialization.data(withJSONObject: selectedSymptoms)
             
-            AF.request(request).responseDecodable(of: UpdateSymptom.self) { (response) in
+            AF.request(request).responseDecodable(of: UpdateInfo.self) { (response) in
                 switch response.result {
                 case .success(let model):
                     if model.success {
@@ -176,6 +176,7 @@ extension CheckListViewController: UITableViewDelegate, UITableViewDataSource {
             let cellData = symptoms[indexPath.row]
             cell.itemLabel.text = cellData.title
             cell.itemCheckBox.tag = cellData.id
+            cell.selectionStyle = .none
             return cell
         } else {
             return UITableViewCell()

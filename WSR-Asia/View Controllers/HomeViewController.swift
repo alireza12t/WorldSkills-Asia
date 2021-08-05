@@ -7,6 +7,8 @@
 
 import UIKit
 import Alamofire
+import Contacts
+import ContactsUI
 
 class HomeViewController: UIViewController, Storyboarded {
     
@@ -54,7 +56,10 @@ class HomeViewController: UIViewController, Storyboarded {
     }
     
     var syptomData: [SymptomsHistoryData]!
+    var contactPicker = CNContactPickerViewController()
     var statsData: CoivdStatsData = CoivdStats.exampleData()
+    var contactsParams: [[String: Any]] = []
+    var contactInfo = ContactsInfo.exampleData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +92,9 @@ class HomeViewController: UIViewController, Storyboarded {
             getCases()
             getSymptomsHistory()
             getCoivdStats()
+            if DataManager.shared.contactDataUploaded {
+                getContactData()
+            }
         } else {
             showAlertView("No InterNet Connection")
             setupCasesView(cases: 0)
@@ -136,7 +144,6 @@ class HomeViewController: UIViewController, Storyboarded {
     
     func getSymptomsHistory() {
         let url = "https://wsa2021.mad.hakta.pro/api/symptoms_history?user_id=\(DataManager.shared.id)"
-        
         
         AF.request(url, method: .get).responseDecodable(of: SymptomsHistory.self) { (response) in
             print(response.result)
@@ -318,16 +325,42 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         switch indexPath.row {
         case 0:
-            cell.titleLabel.text = "That you in safe"
-            cell.numberLabel.text = "Be Sure"
-            cell.topDetailLabel.isHidden = true
-            cell.bottomDetailLabel.text = "Upload your contacts to our server and we will keep you in touch about infection cases"
+            if DataManager.shared.contactDataUploaded {
+                cell.numberLabel.font = cell.numberLabel.font.withSize(32)
+                cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(32)
+                cell.titleLabel.text = "in your contacts list"
+                cell.topDetailLabel.isHidden = false
+                
+                if contactInfo.vaccinated == 0 {
+                    cell.topDetailLabel.text = "No one"
+                    cell.bottomDetailLabel.text = "vaccinated yet"
+                    cell.topDetailLabel.textColor = .white
+                } else {
+                    cell.topDetailLabel.text = "+\(contactInfo.vaccinated) person"
+                    cell.bottomDetailLabel.text = "vaccinated and in safe"
+                    cell.topDetailLabel.textColor = .systemGreen
+                }
+                
+                cell.numberLabel.text = "\(contactInfo.cases) cases"
+                if contactInfo.vaccinated == 0 {
+                    cell.numberLabel.textColor = .white
+                } else {
+                    cell.numberLabel.textColor = .systemRed
+                }
+            } else {
+                cell.titleLabel.text = "That you in safe"
+                cell.numberLabel.text = "Be Sure"
+                cell.topDetailLabel.isHidden = true
+                cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(14)
+                cell.bottomDetailLabel.text = "Upload your contacts to our server and we will keep you in touch about infection cases"
+            }
         case 1:
             cell.titleLabel.text = "Infection cases"
             cell.numberLabel.text = "\(statsData.world.infected)"
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             cell.topDetailLabel.text = "Over all world"
             cell.bottomDetailLabel.text = "\(statsData.current_city.infected) cases in your city"
+            cell.topDetailLabel.isHidden = false
         case 2:
             cell.titleLabel.text = "Deaths"
             cell.numberLabel.text = "\(statsData.world.death)"
@@ -335,11 +368,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.topDetailLabel.text = "Over all world"
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(16)
             cell.bottomDetailLabel.text = "\(statsData.current_city.death) death in your city"
+            cell.topDetailLabel.isHidden = false
         case 3:
             cell.titleLabel.text = "Recovered"
             cell.numberLabel.text = "\(statsData.world.recovered)"
             cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(20)
-            cell.bottomDetailLabel.font = cell.bottomDetailLabel.font.withSize(16)
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(20)
             var adults = Double(statsData.current_city.recovered_adults)/Double(statsData.world.recovered_adults)
             var young = Double(statsData.current_city.recovered_young)/Double(statsData.world.recovered_young)
@@ -347,6 +380,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             young = Double(round(100*young)/100)
             cell.topDetailLabel.text = "\(round(adults))% - adults"
             cell.bottomDetailLabel.text = "\(round(young))% - young"
+            cell.topDetailLabel.isHidden = false
         case 4:
             cell.titleLabel.text = "In your city"
             var vaccinated = Double(statsData.current_city.vaccinated)/Double(statsData.world.vaccinated)
@@ -359,6 +393,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.topDetailLabel.font = cell.topDetailLabel.font.withSize(16)
             cell.topDetailLabel.text = "People vaccinated"
             cell.numberLabel.text = "\(vaccinated)%"
+            cell.topDetailLabel.isHidden = false
         default:
             break
         }
@@ -372,5 +407,81 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = collectionView.bounds.size
         return CGSize(width: size.width, height: size.height - 8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 && !DataManager.shared.contactDataUploaded {
+            contactPicker.delegate = self
+            contactsParams = []
+            present(contactPicker, animated: true, completion: nil)
+        }
+    }
+}
+
+extension HomeViewController: CNContactPickerDelegate {
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contacts: [CNContact]) {
+        for contact in contacts {
+            if let number = contact.phoneNumbers.first {
+                let data: [String : Any] = [
+                    "name" : contact.givenName,
+                    "surname": contact.familyName,
+                    "tel": number.value.stringValue
+                ]
+                contactsParams.append(data)
+            }
+            print(contact)
+        }
+        uploadContactData()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadContactData() {
+        if let url = URL(string: "https://wsa2021.mad.hakta.pro/api/contacts") {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = try! JSONSerialization.data(withJSONObject: contactsParams)
+            
+            AF.request(request).responseDecodable(of: UpdateInfo.self) { (response) in
+                print(response.result)
+                switch response.result {
+                case .success(let model):
+                    if model.success {
+                        DataManager.shared.contactDataUploaded = true
+                        self.getContactData()
+                    } else {
+                        DispatchQueue.main.async {
+                            self.showAlertView(model.message!)
+                        }
+                    }
+                    print(model)
+                case .failure(_):
+                    break
+                }
+            }
+        }
+    }
+    
+    func getContactData() {
+        let url = "https://wsa2021.mad.hakta.pro/api/contacts_info"
+        
+        AF.request(url, method: .get).responseDecodable(of: ContactsInfo.self) { (response) in
+            print(response.result)
+            switch response.result {
+            case .success(let model):
+                if model.success {
+                    DispatchQueue.main.async {
+                        self.contactInfo = model.data!
+                        self.collectionView.reloadItems(at: [IndexPath(row: 0, section: 0)])
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.showAlertView(model.message!)
+                    }
+                }
+                print(model)
+            case .failure(_):
+                break
+            }
+        }
     }
 }
