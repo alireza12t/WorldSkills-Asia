@@ -852,6 +852,21 @@
             </objects>
             <point key="canvasLocation" x="711.59420289855075" y="790.84821428571422"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="EQ3-gd-gXP">
+            <objects>
+                <viewController id="6fq-lH-UiS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O3b-sQ-A4w">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="YX3-M3-1K0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WHW-Xm-cdj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="175" y="1360"/>
+        </scene>
         <!--Code View Controller-->
         <scene sceneID="Nh7-F1-azu">
             <objects>
