@@ -19,6 +19,9 @@ class CheckListViewController: UIViewController, Storyboarded {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var notNowButton: UIButton!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -28,21 +31,45 @@ class CheckListViewController: UIViewController, Storyboarded {
         if currentReachabilityStatus == .notReachable {
             showAlertView()
         } else {
-            self.checkListView.isHidden = true
-            showAlertView(error: "Loading...")
             getSymptoms()
         }
     }
     
+    @IBAction func deleteButtonDidTap(_ sender: Any) {
+        selectedImage = nil
+        deleteButton.isHidden = true
+        imageView.isHidden = true
+        imageView.image = UIImage()
+    }
+    
+    @IBAction func checkBoxButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        let id = sender.tag
+        if let index = selectedSymptoms.firstIndex(of: id) {
+            selectedSymptoms.remove(at: index)
+        } else {
+            selectedSymptoms.append(sender.tag)
+        }
+    }
+    
     @IBAction func confirmButtonDidTap(_ sender: Any) {
-        
+        uploadSymptoms()
+        uploadPhoto()
     }
     
     @IBAction func plusButtonDidTap(_ sender: Any) {
-        
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+            present(imagePicker, animated: true, completion: nil)
+        }
     }
     
     var symptoms: [SymptomItem] = []
+    var selectedSymptoms: [Int] = []
+    var selectedImage: UIImage!
+    var imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +77,7 @@ class CheckListViewController: UIViewController, Storyboarded {
         if currentReachabilityStatus == .notReachable {
             showAlertView()
         } else {
-            checkListView.isHidden = false
+            getSymptoms()
         }
     }
     
@@ -58,9 +85,11 @@ class CheckListViewController: UIViewController, Storyboarded {
         dateLabel.text = Date().toText(with: "MMM dd, yyyy")
         tryAgainButton.underline()
         errorView.layer.cornerRadius = 20
+        confirmButton.layer.cornerRadius = 20
         plusButton.layer.borderWidth = 4
         plusButton.layer.borderColor = UIColor.white.cgColor
         notNowButton.underline()
+        tableView.allowsSelection = false
     }
     
     func showAlertView(error: String = "You need to have access to internet") {
@@ -73,7 +102,23 @@ class CheckListViewController: UIViewController, Storyboarded {
     }
     
     func uploadSymptoms() {
-        
+        if let url = URL(string: "https://wsa2021.mad.hakta.pro/api/day_symptoms") {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.httpBody = try! JSONSerialization.data(withJSONObject: selectedSymptoms)
+                        
+            AF.request(request).response { (response) in
+                print(response.result)
+                switch response.result {
+                case .success(_):
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                case .failure(_):
+                    break
+                }
+            }
+        }
     }
 }
 
@@ -95,8 +140,11 @@ extension CheckListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func setupTableViewHeight() {
+        tableView.invalidateIntrinsicContentSize()
         tableView.layoutIfNeeded()
-        tableViewHeight.constant = tableView.contentSize.height
+        tableView.reloadData()
+        tableViewHeight.constant = CGFloat(symptoms.count * 60) + 20
+        tableView.isScrollEnabled = false
         view.layoutSubviews()
     }
     
@@ -111,7 +159,6 @@ extension CheckListViewController: UITableViewDelegate, UITableViewDataSource {
                     if model.success {
                         self.checkListView.isHidden = false
                         self.symptoms = model.data!
-                        self.tableView.reloadData()
                         self.setupTableViewHeight()
                     } else {
                         self.showAlertView(error: model.message!)
@@ -121,5 +168,25 @@ extension CheckListViewController: UITableViewDelegate, UITableViewDataSource {
                 self.showAlertView(error: "Error in getting symptom items!")
             }
         }
+    }
+}
+
+extension CheckListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var newImage: UIImage
+        
+        if let possibleImage = info[.editedImage] as? UIImage {
+            newImage = possibleImage
+        } else if let possibleImage = info[.originalImage] as? UIImage {
+            newImage = possibleImage
+        } else {
+            return
+        }
+        imageView.isHidden = false
+        deleteButton.isHidden = false
+        selectedImage = newImage
+        imageView.image = newImage
+        dismiss(animated: true)
     }
 }
