@@ -50,6 +50,16 @@
 		05A9690026B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A968D626B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf */; };
 		05A9690126B91E8100DC509C /* ProximaNova-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05A968D726B91E8100DC509C /* ProximaNova-Bold.ttf */; };
 		06CA08D3AD64C24B42057E47 /* Pods_WSR_Asia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */; };
+		9BBA3989EB1840548ED5E0F8 /* Pods_QRCodeWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C75BFFCB8BCA2B819BD3B30 /* Pods_QRCodeWidgetExtension.framework */; };
+		BB64D33E275E983500CDE078 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB64D33D275E983500CDE078 /* WidgetKit.framework */; };
+		BB64D340275E983500CDE078 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB64D33F275E983500CDE078 /* SwiftUI.framework */; };
+		BB64D343275E983500CDE078 /* QRCodeWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB64D342275E983500CDE078 /* QRCodeWidget.swift */; };
+		BB64D346275E983700CDE078 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB64D345275E983700CDE078 /* Assets.xcassets */; };
+		BB64D348275E983700CDE078 /* QRCodeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BB64D344275E983500CDE078 /* QRCodeWidget.intentdefinition */; };
+		BB64D349275E983700CDE078 /* QRCodeWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = BB64D344275E983500CDE078 /* QRCodeWidget.intentdefinition */; };
+		BB64D34C275E983700CDE078 /* QRCodeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB64D33C275E983500CDE078 /* QRCodeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BB64D351275E9B9C00CDE078 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28C26BA71880006B651 /* QR.swift */; };
+		BB64D352275E9E2700CDE078 /* DataManagerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383C26B9304B003359EE /* DataManagerr.swift */; };
 		F577A28926BA63C40006B651 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28826BA63C40006B651 /* UIViewExtension.swift */; };
 		F577A28B26BA6A200006B651 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28A26BA6A200006B651 /* QRCodeViewController.swift */; };
 		F577A28D26BA71880006B651 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28C26BA71880006B651 /* QR.swift */; };
@@ -79,6 +89,30 @@
 		F5D6384C26B940AF003359EE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384B26B940AF003359EE /* UIColorExtension.swift */; };
 		F5D6384E26B9434C003359EE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6384D26B9434C003359EE /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BB64D34A275E983700CDE078 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F5D6381526B914AC003359EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BB64D33B275E983500CDE078;
+			remoteInfo = QRCodeWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BB64D34D275E983700CDE078 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				BB64D34C275E983700CDE078 /* QRCodeWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		05A968AE26B91E7F00DC509C /* ProximaNovaExCn-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaExCn-Thin.ttf"; sourceTree = "<group>"; };
@@ -123,7 +157,17 @@
 		05A968D526B91E8100DC509C /* ProximaNovaExCn-BoldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaExCn-BoldIt.ttf"; sourceTree = "<group>"; };
 		05A968D626B91E8100DC509C /* ProximaNovaCond-RegularIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNovaCond-RegularIt.ttf"; sourceTree = "<group>"; };
 		05A968D726B91E8100DC509C /* ProximaNova-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.ttf"; sourceTree = "<group>"; };
+		5D3288760694845387493C5D /* Pods-QRCodeWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-QRCodeWidgetExtension/Pods-QRCodeWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		80752CBA6B9680EB0AD219E8 /* Pods-QRCodeWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRCodeWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-QRCodeWidgetExtension/Pods-QRCodeWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		8C75BFFCB8BCA2B819BD3B30 /* Pods_QRCodeWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QRCodeWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97F2DAFB17640F3DCCC4F1EF /* Pods-WSR-Asia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSR-Asia.release.xcconfig"; path = "Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia.release.xcconfig"; sourceTree = "<group>"; };
+		BB64D33C275E983500CDE078 /* QRCodeWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QRCodeWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB64D33D275E983500CDE078 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		BB64D33F275E983500CDE078 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		BB64D342275E983500CDE078 /* QRCodeWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeWidget.swift; sourceTree = "<group>"; };
+		BB64D344275E983500CDE078 /* QRCodeWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = QRCodeWidget.intentdefinition; sourceTree = "<group>"; };
+		BB64D345275E983700CDE078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB64D347275E983700CDE078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSR-Asia.debug.xcconfig"; path = "Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia.debug.xcconfig"; sourceTree = "<group>"; };
 		F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSR_Asia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F577A28826BA63C40006B651 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -159,6 +203,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BB64D339275E983500CDE078 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB64D340275E983500CDE078 /* SwiftUI.framework in Frameworks */,
+				BB64D33E275E983500CDE078 /* WidgetKit.framework in Frameworks */,
+				9BBA3989EB1840548ED5E0F8 /* Pods_QRCodeWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F5D6381A26B914AD003359EE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,11 +281,24 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BB64D341275E983500CDE078 /* QRCodeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				BB64D342275E983500CDE078 /* QRCodeWidget.swift */,
+				BB64D344275E983500CDE078 /* QRCodeWidget.intentdefinition */,
+				BB64D345275E983700CDE078 /* Assets.xcassets */,
+				BB64D347275E983700CDE078 /* Info.plist */,
+			);
+			path = QRCodeWidget;
+			sourceTree = "<group>";
+		};
 		BE513D0D3299F8B96FC664F2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */,
 				97F2DAFB17640F3DCCC4F1EF /* Pods-WSR-Asia.release.xcconfig */,
+				80752CBA6B9680EB0AD219E8 /* Pods-QRCodeWidgetExtension.debug.xcconfig */,
+				5D3288760694845387493C5D /* Pods-QRCodeWidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -240,6 +307,9 @@
 			isa = PBXGroup;
 			children = (
 				F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */,
+				BB64D33D275E983500CDE078 /* WidgetKit.framework */,
+				BB64D33F275E983500CDE078 /* SwiftUI.framework */,
+				8C75BFFCB8BCA2B819BD3B30 /* Pods_QRCodeWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -257,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D6381F26B914AD003359EE /* WSR-Asia */,
+				BB64D341275E983500CDE078 /* QRCodeWidget */,
 				F5D6381E26B914AD003359EE /* Products */,
 				BE513D0D3299F8B96FC664F2 /* Pods */,
 				F27316D7D51EA67B6AD73CAC /* Frameworks */,
@@ -267,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				F5D6381D26B914AD003359EE /* WSR-Asia.app */,
+				BB64D33C275E983500CDE078 /* QRCodeWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +406,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BB64D33B275E983500CDE078 /* QRCodeWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB64D350275E983700CDE078 /* Build configuration list for PBXNativeTarget "QRCodeWidgetExtension" */;
+			buildPhases = (
+				4823A6BEC62AF7D294BE0C73 /* [CP] Check Pods Manifest.lock */,
+				BB64D338275E983500CDE078 /* Sources */,
+				BB64D339275E983500CDE078 /* Frameworks */,
+				BB64D33A275E983500CDE078 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QRCodeWidgetExtension;
+			productName = QRCodeWidgetExtension;
+			productReference = BB64D33C275E983500CDE078 /* QRCodeWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F5D6381C26B914AD003359EE /* WSR-Asia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5D6383126B914AF003359EE /* Build configuration list for PBXNativeTarget "WSR-Asia" */;
@@ -343,10 +433,12 @@
 				F5D6381A26B914AD003359EE /* Frameworks */,
 				F5D6381B26B914AD003359EE /* Resources */,
 				485DDD8999EEA05B0F2F43D8 /* [CP] Embed Pods Frameworks */,
+				BB64D34D275E983700CDE078 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BB64D34B275E983700CDE078 /* PBXTargetDependency */,
 			);
 			name = "WSR-Asia";
 			productName = "WSR-Asia";
@@ -359,9 +451,12 @@
 		F5D6381526B914AC003359EE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					BB64D33B275E983500CDE078 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					F5D6381C26B914AD003359EE = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -381,11 +476,20 @@
 			projectRoot = "";
 			targets = (
 				F5D6381C26B914AD003359EE /* WSR-Asia */,
+				BB64D33B275E983500CDE078 /* QRCodeWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BB64D33A275E983500CDE078 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB64D346275E983700CDE078 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F5D6381B26B914AD003359EE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,6 +545,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4823A6BEC62AF7D294BE0C73 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QRCodeWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		485DDD8999EEA05B0F2F43D8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +609,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BB64D338275E983500CDE078 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB64D352275E9E2700CDE078 /* DataManagerr.swift in Sources */,
+				BB64D348275E983700CDE078 /* QRCodeWidget.intentdefinition in Sources */,
+				BB64D343275E983500CDE078 /* QRCodeWidget.swift in Sources */,
+				BB64D351275E9B9C00CDE078 /* QR.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F5D6381926B914AD003359EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -499,6 +636,7 @@
 				F5D1FE5A26BBC05D00B9C293 /* CheckListViewController.swift in Sources */,
 				F5D6383D26B9304B003359EE /* DataManagerr.swift in Sources */,
 				F5D6384226B93555003359EE /* SplashViewController.swift in Sources */,
+				BB64D349275E983700CDE078 /* QRCodeWidget.intentdefinition in Sources */,
 				F577A28926BA63C40006B651 /* UIViewExtension.swift in Sources */,
 				F5D6384A26B93BF7003359EE /* DateExtension.swift in Sources */,
 				F5D1FE6026BBD08C00B9C293 /* UpdateInfo.swift in Sources */,
@@ -516,6 +654,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB64D34B275E983700CDE078 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BB64D33B275E983500CDE078 /* QRCodeWidgetExtension */;
+			targetProxy = BB64D34A275E983700CDE078 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F5D6382626B914AD003359EE /* Main.storyboard */ = {
@@ -537,6 +683,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BB64D34E275E983700CDE078 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80752CBA6B9680EB0AD219E8 /* Pods-QRCodeWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XYY68H4963;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QRCodeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QRCodeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.alireza.WSR-Asia.QRCodeWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BB64D34F275E983700CDE078 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D3288760694845387493C5D /* Pods-QRCodeWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XYY68H4963;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QRCodeWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QRCodeWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.alireza.WSR-Asia.QRCodeWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F5D6382F26B914AF003359EE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -657,6 +863,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -678,6 +885,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97F2DAFB17640F3DCCC4F1EF /* Pods-WSR-Asia.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -698,6 +906,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BB64D350275E983700CDE078 /* Build configuration list for PBXNativeTarget "QRCodeWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB64D34E275E983700CDE078 /* Debug */,
+				BB64D34F275E983700CDE078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F5D6381826B914AC003359EE /* Build configuration list for PBXProject "WSR-Asia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

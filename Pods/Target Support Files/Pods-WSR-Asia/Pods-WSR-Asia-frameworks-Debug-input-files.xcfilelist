@@ -1,6 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
-${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/Alamofire-iOS14.1/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher-iOS14.1/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxKeyboard/RxKeyboard.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework

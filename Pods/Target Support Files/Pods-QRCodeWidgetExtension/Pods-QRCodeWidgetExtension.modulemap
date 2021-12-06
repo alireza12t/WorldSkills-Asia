@@ -1,0 +1,6 @@
+framework module Pods_QRCodeWidgetExtension {
+  umbrella header "Pods-QRCodeWidgetExtension-umbrella.h"
+
+  export *
+  module * { export * }
+}
