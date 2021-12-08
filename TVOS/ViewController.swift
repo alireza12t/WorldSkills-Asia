@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         
         
         //MARK: - Time
-        let timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeChanged), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timeChanged), userInfo: nil, repeats: true)
     }
     
     @objc func timeChanged() {
