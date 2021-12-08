@@ -60,6 +60,11 @@
 		BB64D34C275E983700CDE078 /* QRCodeWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = BB64D33C275E983500CDE078 /* QRCodeWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		BB64D351275E9B9C00CDE078 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28C26BA71880006B651 /* QR.swift */; };
 		BB64D352275E9E2700CDE078 /* DataManagerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D6383C26B9304B003359EE /* DataManagerr.swift */; };
+		BB796E83276014B4004F8AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB796E82276014B4004F8AA1 /* AppDelegate.swift */; };
+		BB796E85276014B4004F8AA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB796E84276014B4004F8AA1 /* ViewController.swift */; };
+		BB796E88276014B4004F8AA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB796E86276014B4004F8AA1 /* Main.storyboard */; };
+		BB796E8A276014B6004F8AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB796E89276014B6004F8AA1 /* Assets.xcassets */; };
+		BB796E8D276014B6004F8AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB796E8B276014B6004F8AA1 /* LaunchScreen.storyboard */; };
 		F577A28926BA63C40006B651 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28826BA63C40006B651 /* UIViewExtension.swift */; };
 		F577A28B26BA6A200006B651 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28A26BA6A200006B651 /* QRCodeViewController.swift */; };
 		F577A28D26BA71880006B651 /* QR.swift in Sources */ = {isa = PBXBuildFile; fileRef = F577A28C26BA71880006B651 /* QR.swift */; };
@@ -168,6 +173,12 @@
 		BB64D344275E983500CDE078 /* QRCodeWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = QRCodeWidget.intentdefinition; sourceTree = "<group>"; };
 		BB64D345275E983700CDE078 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB64D347275E983700CDE078 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB796E80276014B4004F8AA1 /* TVOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB796E82276014B4004F8AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB796E84276014B4004F8AA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB796E87276014B4004F8AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BB796E89276014B6004F8AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BB796E8C276014B6004F8AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED45B55A4E36BEA7DF5CD3DD /* Pods-WSR-Asia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSR-Asia.debug.xcconfig"; path = "Target Support Files/Pods-WSR-Asia/Pods-WSR-Asia.debug.xcconfig"; sourceTree = "<group>"; };
 		F13AB16070F2FA61BD2DDF33 /* Pods_WSR_Asia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WSR_Asia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F577A28826BA63C40006B651 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -210,6 +221,13 @@
 				BB64D340275E983500CDE078 /* SwiftUI.framework in Frameworks */,
 				BB64D33E275E983500CDE078 /* WidgetKit.framework in Frameworks */,
 				9BBA3989EB1840548ED5E0F8 /* Pods_QRCodeWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB796E7D276014B4004F8AA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +310,18 @@
 			path = QRCodeWidget;
 			sourceTree = "<group>";
 		};
+		BB796E81276014B4004F8AA1 /* TVOS */ = {
+			isa = PBXGroup;
+			children = (
+				BB796E82276014B4004F8AA1 /* AppDelegate.swift */,
+				BB796E84276014B4004F8AA1 /* ViewController.swift */,
+				BB796E86276014B4004F8AA1 /* Main.storyboard */,
+				BB796E89276014B6004F8AA1 /* Assets.xcassets */,
+				BB796E8B276014B6004F8AA1 /* LaunchScreen.storyboard */,
+			);
+			path = TVOS;
+			sourceTree = "<group>";
+		};
 		BE513D0D3299F8B96FC664F2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +358,7 @@
 			children = (
 				F5D6381F26B914AD003359EE /* WSR-Asia */,
 				BB64D341275E983500CDE078 /* QRCodeWidget */,
+				BB796E81276014B4004F8AA1 /* TVOS */,
 				F5D6381E26B914AD003359EE /* Products */,
 				BE513D0D3299F8B96FC664F2 /* Pods */,
 				F27316D7D51EA67B6AD73CAC /* Frameworks */,
@@ -339,6 +370,7 @@
 			children = (
 				F5D6381D26B914AD003359EE /* WSR-Asia.app */,
 				BB64D33C275E983500CDE078 /* QRCodeWidgetExtension.appex */,
+				BB796E80276014B4004F8AA1 /* TVOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -424,6 +456,23 @@
 			productReference = BB64D33C275E983500CDE078 /* QRCodeWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		BB796E7F276014B4004F8AA1 /* TVOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB796E8E276014B6004F8AA1 /* Build configuration list for PBXNativeTarget "TVOS" */;
+			buildPhases = (
+				BB796E7C276014B4004F8AA1 /* Sources */,
+				BB796E7D276014B4004F8AA1 /* Frameworks */,
+				BB796E7E276014B4004F8AA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVOS;
+			productName = TVOS;
+			productReference = BB796E80276014B4004F8AA1 /* TVOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F5D6381C26B914AD003359EE /* WSR-Asia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F5D6383126B914AF003359EE /* Build configuration list for PBXNativeTarget "WSR-Asia" */;
@@ -457,6 +506,9 @@
 					BB64D33B275E983500CDE078 = {
 						CreatedOnToolsVersion = 13.1;
 					};
+					BB796E7F276014B4004F8AA1 = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					F5D6381C26B914AD003359EE = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -477,6 +529,7 @@
 			targets = (
 				F5D6381C26B914AD003359EE /* WSR-Asia */,
 				BB64D33B275E983500CDE078 /* QRCodeWidgetExtension */,
+				BB796E7F276014B4004F8AA1 /* TVOS */,
 			);
 		};
 /* End PBXProject section */
@@ -487,6 +540,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB64D346275E983700CDE078 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB796E7E276014B4004F8AA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB796E8D276014B6004F8AA1 /* LaunchScreen.storyboard in Resources */,
+				BB796E8A276014B6004F8AA1 /* Assets.xcassets in Resources */,
+				BB796E88276014B4004F8AA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,6 +683,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB796E7C276014B4004F8AA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB796E85276014B4004F8AA1 /* ViewController.swift in Sources */,
+				BB796E83276014B4004F8AA1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F5D6381926B914AD003359EE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -664,6 +736,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BB796E86276014B4004F8AA1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB796E87276014B4004F8AA1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BB796E8B276014B6004F8AA1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB796E8C276014B6004F8AA1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		F5D6382626B914AD003359EE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -740,6 +828,62 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BB796E8F276014B6004F8AA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XYY68H4963;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.alireza.TVOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
+			};
+			name = Debug;
+		};
+		BB796E90276014B6004F8AA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XYY68H4963;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.alireza.TVOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Release;
 		};
@@ -911,6 +1055,15 @@
 			buildConfigurations = (
 				BB64D34E275E983700CDE078 /* Debug */,
 				BB64D34F275E983700CDE078 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB796E8E276014B6004F8AA1 /* Build configuration list for PBXNativeTarget "TVOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB796E8F276014B6004F8AA1 /* Debug */,
+				BB796E90276014B6004F8AA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
